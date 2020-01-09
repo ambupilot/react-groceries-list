@@ -18,6 +18,7 @@ export default class GroceryList extends React.Component {
                 >
                   <span> {grocery.title}</span>
                   {readonly ? "" : <button>X</button>}
+                  {readonly ? grocery.amount : ""}
                 </li>
               ))
             : " "}

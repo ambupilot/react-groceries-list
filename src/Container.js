@@ -10,16 +10,19 @@ export default class Container extends React.Component {
       groceryInput: "",
       groceryItems: [
         { id: 1, title: "appels" },
-        { id: 2, title: "pak melk" }
+        { id: 2, title: "pak melk" },
+        { id: 2, title: "chocola" }
       ],
-      shoppingListItems: [{ id: 1, title: "chocola" }]
+      shoppingListItems: [{ id: 1, title: "chocola", amount: 2 }]
     };
   }
   render() {
-    const handleClickGroceryItem = event => {
+    const addNewShoppingListItem = itemTitle => {
+      console.log("add new");
       const newShoppingItem = {
         id: this.state.shoppingListItems.length + 1,
-        title: event.target.getAttribute("value")
+        title: itemTitle,
+        amount: 1
       };
 
       this.setState(prevState => {
@@ -28,6 +31,30 @@ export default class Container extends React.Component {
           shoppingListItems: newList
         };
       });
+    };
+    const addAmountToItem = itemTitle => {
+      console.log("add existing");
+      const shoppingList = [...this.state.shoppingListItems];
+      const newList = shoppingList.map(shoppingItem => {
+        if (shoppingItem.title == itemTitle) {
+          shoppingItem.amount++;
+        }
+        return shoppingItem;
+      });
+      this.setState({ shoppingListItems: newList });
+    };
+
+    const handleClickGroceryItem = event => {
+      const clickedItem = event.target.getAttribute("value");
+      const currentShoppingList = this.state.shoppingListItems;
+
+      const shoppingListItem = currentShoppingList.filter(
+        item => item.title === clickedItem
+      );
+
+      shoppingListItem.length === 0
+        ? addNewShoppingListItem(clickedItem)
+        : addAmountToItem(clickedItem);
     };
 
     const emptyCart = () => {
