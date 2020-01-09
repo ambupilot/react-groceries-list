@@ -1,14 +1,15 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import GroceryList from "./components/GroceryList";
+import Container from "./components/Container";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GroceryList />
+        <h1> BoodschappenLijst </h1>
       </header>
+      <Container />
     </div>
   );
 }

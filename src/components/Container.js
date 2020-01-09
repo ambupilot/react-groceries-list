@@ -1,8 +1,10 @@
 import React from "react";
-import { GroceryItem } from "./GroceryItem.js";
 import "./GroceryList.css";
+import GroceryList from "./GroceryList";
+import ShoppingCart from "./ShoppingCart";
+import "./Container.css";
 
-export default class GroceryList extends React.Component {
+export default class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,12 +17,9 @@ export default class GroceryList extends React.Component {
   }
   render() {
     return (
-      <div className="groceries-list">
-        <ul>
-          {this.state.groceryItems.map(grocery => (
-            <GroceryItem title={grocery.title} key={grocery.id} />
-          ))}
-        </ul>
+      <div className="container">
+        <GroceryList />
+        <ShoppingCart />
       </div>
     );
   }
