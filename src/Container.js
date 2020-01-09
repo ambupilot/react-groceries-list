@@ -9,7 +9,7 @@ export default class Container extends React.Component {
       groceryInput: "",
       groceryItems: [
         { id: 1, title: "appels" },
-        { id: 2, title: "brood" }
+        { id: 2, title: "pak melk" }
       ],
       shoppingListItems: [{ id: 1, title: "chocola" }]
     };
@@ -23,19 +23,33 @@ export default class Container extends React.Component {
 
       this.setState(prevState => {
         const newList = prevState.shoppingListItems.concat(newShoppingItem);
-        console.log("newlist", newList);
         return {
           shoppingListItems: newList
         };
       });
     };
+
+    const emptyCart = () => {
+      this.setState({ shoppingListItems: [] });
+    };
     return (
       <div className="container">
-        <GroceryList
-          groceryItems={this.state.groceryItems}
-          handleClickGroceryItem={handleClickGroceryItem}
-        />
-        <ShoppingCart groceryItems={this.state.shoppingListItems} />
+        <div className="groceries-list">
+          <h1>Boodschappenlijst</h1>
+          <input></input> <button>voeg toe</button>
+          <GroceryList
+            groceryItems={this.state.groceryItems}
+            handleClickGroceryItem={handleClickGroceryItem}
+          />
+        </div>
+        <div className="groceries-list">
+          <h1>Winkelmand</h1>
+          <button onClick={emptyCart}>Empty Cart</button>
+          <ShoppingCart
+            emptyCart={emptyCart}
+            groceryItems={this.state.shoppingListItems}
+          />
+        </div>
       </div>
     );
   }
