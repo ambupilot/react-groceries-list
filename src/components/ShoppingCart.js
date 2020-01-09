@@ -1,8 +1,8 @@
 import React from "react";
 import GroceryList from "./GroceryList";
 
-const ShoppingCart = ({ title }) => {
-  return <GroceryList readonly={false} />;
+const ShoppingCart = ({ groceryItems }) => {
+  return <GroceryList groceryItems={groceryItems} />;
 };
 
 export default ShoppingCart;

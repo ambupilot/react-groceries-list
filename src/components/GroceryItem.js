@@ -4,7 +4,7 @@ export const GroceryItem = ({ title, readonly }) => {
   return (
     <li className="list-item">
       {title}
-      {readonly ? <button>X</button> : ""}
+      {readonly ? "" : <button>X</button>}
     </li>
   );
 };
