@@ -15,9 +15,26 @@ export default class Container extends React.Component {
     };
   }
   render() {
+    const handleClickGroceryItem = event => {
+      const newShoppingItem = {
+        id: this.state.shoppingListItems.length + 1,
+        title: event.target.getAttribute("value")
+      };
+
+      this.setState(prevState => {
+        const newList = prevState.shoppingListItems.concat(newShoppingItem);
+        console.log("newlist", newList);
+        return {
+          shoppingListItems: newList
+        };
+      });
+    };
     return (
       <div className="container">
-        <GroceryList groceryItems={this.state.groceryItems} />
+        <GroceryList
+          groceryItems={this.state.groceryItems}
+          handleClickGroceryItem={handleClickGroceryItem}
+        />
         <ShoppingCart groceryItems={this.state.shoppingListItems} />
       </div>
     );

@@ -10,6 +10,10 @@
   margin: 5px;
   color: black;
 }
+.list-item:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
 
 .groceries-input input,
 .groceries-input button {
