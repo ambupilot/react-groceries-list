@@ -8,7 +8,9 @@ export const InputField = ({ addGrocery, handleChange }) => {
         type="search"
         onChange={handleChange}
       ></input>
-      <button onClick={addGrocery}>Voeg toe</button>
+      <button className="add-grocery-button" onClick={addGrocery}>
+        Voeg toe
+      </button>
     </form>
   );
 };

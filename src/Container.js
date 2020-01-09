@@ -1,6 +1,7 @@
 import React from "react";
 import GroceryList from "./components/GroceryList";
 import ShoppingCart from "./components/ShoppingCart";
+import { InputField } from "./components/InputField";
 
 export default class Container extends React.Component {
   constructor(props) {
@@ -32,19 +33,22 @@ export default class Container extends React.Component {
     const emptyCart = () => {
       this.setState({ shoppingListItems: [] });
     };
+
     return (
       <div className="container">
         <div className="groceries-list">
           <h1>Boodschappenlijst</h1>
-          <input></input> <button>voeg toe</button>
+          <InputField />
           <GroceryList
             groceryItems={this.state.groceryItems}
             handleClickGroceryItem={handleClickGroceryItem}
           />
         </div>
-        <div className="groceries-list">
+        <div className="groceries-list basket">
           <h1>Winkelmand</h1>
-          <button onClick={emptyCart}>Empty Cart</button>
+          <button className="add-grocery-button" onClick={emptyCart}>
+            Empty Cart
+          </button>
           <ShoppingCart
             emptyCart={emptyCart}
             groceryItems={this.state.shoppingListItems}
