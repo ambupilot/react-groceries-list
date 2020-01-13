@@ -1,6 +1,7 @@
 .container {
   display: flex;
 }
+
 .list-item {
   display: flex;
   justify-content: space-between;
@@ -62,4 +63,19 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.basket .list-item {
+  background: lightblue;
+}
+
+.basket .list-item:nth-child(even) {
+  background: lightcyan;
+}
+
+.groceries .list-item {
+  background: lightpink;
+}
+.groceries .list-item:nth-child(odd) {
+  background: lightcoral;
 }

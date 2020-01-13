@@ -18,7 +18,6 @@ export default class Container extends React.Component {
   }
   render() {
     const addNewShoppingListItem = itemTitle => {
-      console.log("add new");
       const newShoppingItem = {
         id: this.state.shoppingListItems.length + 1,
         title: itemTitle,
@@ -33,7 +32,6 @@ export default class Container extends React.Component {
       });
     };
     const addAmountToItem = itemTitle => {
-      console.log("add existing");
       const shoppingList = [...this.state.shoppingListItems];
       const newList = shoppingList.map(shoppingItem => {
         if (shoppingItem.title == itemTitle) {
@@ -47,7 +45,6 @@ export default class Container extends React.Component {
     const handleClickGroceryItem = event => {
       const clickedItem = event.target.getAttribute("value");
       const currentShoppingList = this.state.shoppingListItems;
-
       const shoppingListItem = currentShoppingList.filter(
         item => item.title === clickedItem
       );
@@ -63,7 +60,7 @@ export default class Container extends React.Component {
 
     return (
       <div className="container">
-        <div className="groceries-list">
+        <div className="groceries-list groceries">
           <h1>Boodschappenlijst</h1>
           <InputField />
           <GroceryList
@@ -73,11 +70,8 @@ export default class Container extends React.Component {
         </div>
         <div className="groceries-list basket">
           <h1>Winkelmand</h1>
-          <button className="add-grocery-button" onClick={emptyCart}>
-            Empty Cart
-          </button>
           <ShoppingCart
-            emptyCart={emptyCart}
+            handleClickEmptyCart={emptyCart}
             groceryItems={this.state.shoppingListItems}
           />
         </div>
