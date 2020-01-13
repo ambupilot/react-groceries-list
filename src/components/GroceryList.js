@@ -1,24 +1,20 @@
 import React from "react";
+import GroceryListItem from "./GroceryListItem";
 
 export default class GroceryList extends React.Component {
   render() {
     const { groceryItems, readonly, handleClickGroceryItem } = this.props;
-    console.log(groceryItems);
     return (
       <React.Fragment>
         {" "}
         <ul>
           {groceryItems
             ? groceryItems.map(grocery => (
-                <li
-                  className="list-item"
-                  onClick={handleClickGroceryItem}
-                  key={grocery.id}
-                  value={grocery.title}
-                >
-                  <span> {grocery.title}</span>
-                  <span>{readonly ? `amount: ${grocery.amount}` : ""}</span>
-                </li>
+                <GroceryListItem
+                  grocery={grocery}
+                  readonly={readonly}
+                  clickGrocery={handleClickGroceryItem}
+                />
               ))
             : " "}
         </ul>
