@@ -34,7 +34,9 @@ export default class Container extends React.Component {
     const addAmountToItem = itemTitle => {
       const shoppingList = [...this.state.shoppingListItems];
       const newList = shoppingList.map(shoppingItem => {
-        if (shoppingItem.title == itemTitle) {
+        if (shoppingItem.title === itemTitle) {
+          console.log('itemTitle', itemTitle);
+          console.log('shoppingItem.title', shoppingItem.title);
           shoppingItem.amount++;
         }
         return shoppingItem;
