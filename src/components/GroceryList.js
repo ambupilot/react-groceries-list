@@ -6,7 +6,6 @@ export default class GroceryList extends React.Component {
     const { groceryItems, readonly, handleClickGroceryItem } = this.props;
     return (
       <React.Fragment>
-        {" "}
         <ul>
           {groceryItems
             ? groceryItems.map(grocery => (
