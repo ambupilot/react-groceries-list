@@ -1,6 +1,7 @@
 import React from "react";
 
 const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
+  console.log('grocery.id', grocery.id);
   return (
     <li
       className="list-item"
@@ -8,7 +9,7 @@ const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
       key={grocery.id}
       value={grocery.title}
     >
-      <span> {grocery.title}</span>
+      <span>{grocery.title}</span>
       <span>{readonly ? `amount: ${grocery.amount}` : ""}</span>
     </li>
   );

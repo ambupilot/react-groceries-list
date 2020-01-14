@@ -11,9 +11,9 @@ export default class Container extends React.Component {
       groceryItems: [
         { id: 1, title: "appels" },
         { id: 2, title: "pak melk" },
-        { id: 2, title: "chocola" }
+        { id: 3, title: "chocola" }
       ],
-      shoppingListItems: [{ id: 1, title: "chocola", amount: 2 }]
+      shoppingListItems: [{ id: 4, title: "chocola", amount: 3 }]
     };
   }
   render() {

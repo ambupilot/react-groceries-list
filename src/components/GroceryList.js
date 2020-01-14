@@ -9,13 +9,15 @@ export default class GroceryList extends React.Component {
         {" "}
         <ul>
           {groceryItems
-            ? groceryItems.map(grocery => (
+            ? groceryItems.map(grocery => {
+              return(
                 <GroceryListItem
+                  key={grocery.id}
                   grocery={grocery}
                   readonly={readonly}
                   clickGrocery={handleClickGroceryItem}
                 />
-              ))
+              )})
             : " "}
         </ul>
       </React.Fragment>
