@@ -7,7 +7,7 @@ const ShoppingCart = ({ groceryItems, handleClickEmptyCart }) => {
       <button className="button-primary" onClick={handleClickEmptyCart}>
         Leeg de winkelmand
       </button>
-      <GroceryList readonly={true} groceryItems={groceryItems} />
+      <GroceryList isShoppingCart={true} groceryItems={groceryItems} />
     </React.Fragment>
   );
 };
