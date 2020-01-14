@@ -35,7 +35,7 @@ export default class Container extends React.Component {
       // We maken een copy van de state, want je kunt de state niet direct muteren.
       const shoppingList = [...this.state.shoppingListItems];
       const newList = shoppingList.map(shoppingItem => {
-        if (shoppingItem.title == itemTitle) {
+        if (shoppingItem.title === itemTitle) {
           shoppingItem.amount++;
         }
         return shoppingItem;

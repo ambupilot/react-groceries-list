@@ -10,6 +10,7 @@ export default class GroceryList extends React.Component {
           {groceryItems
             ? groceryItems.map(grocery => (
                 <GroceryListItem
+                  key={grocery.id}
                   grocery={grocery}
                   readonly={readonly}
                   clickGrocery={handleClickGroceryItem}
