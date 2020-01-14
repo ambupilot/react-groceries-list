@@ -4,10 +4,10 @@ import GroceryList from "./GroceryList";
 const ShoppingCart = ({ groceryItems, handleClickEmptyCart }) => {
   return (
     <React.Fragment>
-      <button className="add-grocery-button" onClick={handleClickEmptyCart}>
-        Empty Cart
+      <button className="button-primary" onClick={handleClickEmptyCart}>
+        Leeg de winkelmand
       </button>
-      <GroceryList readonly={true} groceryItems={groceryItems} />
+      <GroceryList isShoppingCart={true} groceryItems={groceryItems} />
     </React.Fragment>
   );
 };

@@ -11,9 +11,9 @@ export default class Container extends React.Component {
       groceryItems: [
         { id: 1, title: "appels" },
         { id: 2, title: "pak melk" },
-        { id: 3, title: "chocola" }
+        { id: 3, title: "chocolade" }
       ],
-      shoppingListItems: [{ id: 1, title: "chocola", amount: 2 }]
+      shoppingListItems: [{ id: 1, title: "chocolade", amount: 2 }]
     };
   }
   render() {
@@ -32,9 +32,10 @@ export default class Container extends React.Component {
       });
     };
     const addAmountToItem = itemTitle => {
+      // We maken een copy van de state, want je kunt de state niet direct muteren.
       const shoppingList = [...this.state.shoppingListItems];
       const newList = shoppingList.map(shoppingItem => {
-        if (shoppingItem.title == itemTitle) {
+        if (shoppingItem.title === itemTitle) {
           shoppingItem.amount++;
         }
         return shoppingItem;
@@ -60,6 +61,8 @@ export default class Container extends React.Component {
 
     const addGrocery = grocery => {
       const item = { id: this.state.groceryItems.length + 1, title: grocery };
+      // We gebruiken concat, omdat concat een nieuwe array returned.
+      // Push methode werkt niet omdat je dan direct de state zou muteren.
       this.setState({ groceryItems: this.state.groceryItems.concat(item) });
     };
 

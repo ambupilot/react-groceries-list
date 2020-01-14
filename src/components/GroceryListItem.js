@@ -9,7 +9,7 @@ const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
       value={grocery.title}
     >
       <span> {grocery.title}</span>
-      <span>{readonly ? `amount: ${grocery.amount}` : ""}</span>
+      <span>{readonly ? `Hoeveelheid: ${grocery.amount}` : ""}</span>
     </li>
   );
 };
