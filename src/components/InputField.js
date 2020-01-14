@@ -27,8 +27,11 @@ export default class InputField extends React.Component {
           type="search"
           onChange={onInput}
           value={this.state.input}
+          className="input-primary"
         ></input>
-        <button type="submit">Voeg toe</button>
+        <button className="button-primary" type="submit">
+          Voeg toe
+        </button>
       </form>
     );
   }

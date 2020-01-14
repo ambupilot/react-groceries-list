@@ -6,7 +6,7 @@ import Container from "./Container";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="groceries-header">
         <h1> BoodschappenLijst </h1>
       </header>
       <Container />

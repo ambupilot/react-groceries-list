@@ -11,14 +11,9 @@
   margin: 5px;
   color: black;
 }
-.list-item:hover {
-  cursor: pointer;
-  background-color: lightgray;
-}
 
-.groceries-input input,
-.groceries-input button,
-.add-grocery-button {
+.button-primary,
+.input-primary {
   color: black;
   padding: 14px 20px;
   margin: 20px 0;
@@ -46,11 +41,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
+.groceries-header {
   background-color: #282c34;
   min-height: 30vh;
   display: flex;
@@ -59,10 +50,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #09d3ac;
 }
 
 .basket .list-item {
