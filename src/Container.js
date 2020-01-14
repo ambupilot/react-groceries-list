@@ -1,7 +1,7 @@
 import React from "react";
 import GroceryList from "./components/GroceryList";
 import ShoppingCart from "./components/ShoppingCart";
-import { InputField } from "./components/InputField";
+import InputField from "./components/InputField";
 
 export default class Container extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Container extends React.Component {
       groceryItems: [
         { id: 1, title: "appels" },
         { id: 2, title: "pak melk" },
-        { id: 2, title: "chocola" }
+        { id: 3, title: "chocola" }
       ],
       shoppingListItems: [{ id: 1, title: "chocola", amount: 2 }]
     };
@@ -58,11 +58,16 @@ export default class Container extends React.Component {
       this.setState({ shoppingListItems: [] });
     };
 
+    const addGrocery = grocery => {
+      const item = { id: this.state.groceryItems.length + 1, title: grocery };
+      this.setState({ groceryItems: this.state.groceryItems.concat(item) });
+    };
+
     return (
       <div className="container">
         <div className="groceries-list groceries">
           <h1>Boodschappenlijst</h1>
-          <InputField />
+          <InputField onSubmit={addGrocery} />
           <GroceryList
             groceryItems={this.state.groceryItems}
             handleClickGroceryItem={handleClickGroceryItem}
