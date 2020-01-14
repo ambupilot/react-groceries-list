@@ -1,7 +1,6 @@
 import React from "react";
 
 const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
-  console.log('grocery.id', grocery.id);
   return (
     <li
       className="list-item"
