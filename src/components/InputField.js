@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class InputField extends React.Component {
+class InputField extends React.Component {
   state = {
     input: ""
   };
@@ -36,3 +36,5 @@ export default class InputField extends React.Component {
     );
   }
 }
+
+export default InputField;

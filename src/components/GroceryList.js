@@ -1,7 +1,7 @@
 import React from "react";
 import GroceryListItem from "./GroceryListItem";
 
-export default class GroceryList extends React.Component {
+class GroceryList extends React.Component {
   render() {
     const { groceryItems, readonly, handleClickGroceryItem } = this.props;
     return (
@@ -22,3 +22,5 @@ export default class GroceryList extends React.Component {
     );
   }
 }
+
+export default GroceryList;

@@ -13,4 +13,5 @@ const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
     </li>
   );
 };
+
 export default GroceryListItem;

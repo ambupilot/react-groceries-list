@@ -3,7 +3,7 @@ import GroceryList from "./components/GroceryList";
 import ShoppingCart from "./components/ShoppingCart";
 import InputField from "./components/InputField";
 
-export default class Container extends React.Component {
+class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -87,3 +87,5 @@ export default class Container extends React.Component {
     );
   }
 }
+
+export default Container;
