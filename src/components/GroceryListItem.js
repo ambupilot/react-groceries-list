@@ -1,6 +1,6 @@
 import React from "react";
 
-const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
+const GroceryListItem = ({ clickGrocery, isShoppingCart, grocery }) => {
   return (
     <li
       className="list-item"
@@ -9,7 +9,7 @@ const GroceryListItem = ({ clickGrocery, readonly, grocery }) => {
       value={grocery.title}
     >
       <span> {grocery.title}</span>
-      <span>{readonly ? `Hoeveelheid: ${grocery.amount}` : ""}</span>
+      <span>{isShoppingCart ? `Hoeveelheid: ${grocery.amount}` : ""}</span>
     </li>
   );
 };
