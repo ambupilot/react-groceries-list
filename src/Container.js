@@ -1,7 +1,6 @@
 import React from "react";
-import GroceryList from "./components/GroceryList";
-import ShoppingCart from "./components/ShoppingCart";
-import InputField from "./components/InputField";
+import GroceryList from "./containers/GroceryList";
+import ShoppingCart from "./containers/ShoppingCart";
 
 class Container extends React.Component {
   constructor(props) {
@@ -70,8 +69,8 @@ class Container extends React.Component {
       <div className="container">
         <div className="groceries-list groceries">
           <h1>Boodschappenlijst</h1>
-          <InputField onSubmit={addGrocery} />
           <GroceryList
+            addGrocery={addGrocery}
             groceryItems={this.state.groceryItems}
             handleClickGroceryItem={handleClickGroceryItem}
           />
