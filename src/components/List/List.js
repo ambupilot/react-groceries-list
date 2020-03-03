@@ -4,7 +4,6 @@ import ListItem from "./ListItem";
 class List extends React.Component {
   render() {
     const { items, isShoppingCart, handleClickItem } = this.props;
-    console.log(items);
     const listItems = items
       ? items.map(item => (
           <ListItem

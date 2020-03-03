@@ -6,7 +6,6 @@ const GroceryList = ({ groceryItems, handleClickGroceryItem, addGrocery }) => {
   return (
     <React.Fragment>
       <InputField onSubmit={addGrocery} />
-
       <List items={groceryItems} handleClickItem={handleClickGroceryItem} />
     </React.Fragment>
   );
