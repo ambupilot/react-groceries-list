@@ -8,7 +8,7 @@ const ListItem = ({ clickItem, readonly, item }) => {
       onClick={clickItem}
       value={item.title}
     >
-      <span> {item.title}</span>
+      <span> {item.title || ""}</span>
       <span>{readonly ? `Hoeveelheid: ${item.amount}` : ""}</span>
     </li>
   );
