@@ -1,5 +1,5 @@
 import React from "react";
-import GroceryList from "./GroceryList";
+import List from "../components/List/List";
 
 const ShoppingCart = ({ groceryItems, handleClickEmptyCart }) => {
   return (
@@ -7,7 +7,7 @@ const ShoppingCart = ({ groceryItems, handleClickEmptyCart }) => {
       <button className="button-primary" onClick={handleClickEmptyCart}>
         Leeg de winkelmand
       </button>
-      <GroceryList isShoppingCart={true} groceryItems={groceryItems} />
+      <List readonly={true} items={groceryItems} />
     </React.Fragment>
   );
 };
